@@ -26,7 +26,7 @@ def make_progression() -> tuple:
         if random_index_of_hidden_number == i:
             starting_number += increment_number
             hidden_number: int = starting_number
-            progress += '... '
+            progress += '.. '
         else:
             starting_number += increment_number
             progress += f'{starting_number} '
