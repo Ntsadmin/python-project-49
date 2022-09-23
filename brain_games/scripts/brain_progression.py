@@ -1,5 +1,5 @@
 """
-Функционал игры "математическая последовательность"
+Functional for mathematical progressions
 """
 from random import randint, randrange
 from .cli import welcome_user
@@ -7,20 +7,20 @@ from .cli import welcome_user
 
 def make_progression() -> tuple:
     """
-    Фукнция помогает нам генерировать последовательность и получить
-    результат игры
+    Function that generates a progression with the hidden
+    number to find by the player
     """
-    # Сколько итерации будет в последовательности
+    # Iteration for the progression
     number_of_iterations: int = 10
-    # С какого значения начинается последовательност
+    # Starting number of the progression
     starting_number: int = randint(1, 100)
-    # Параметр икрементирование
+    # Increments the starting number and etc...
     increment_number: int = randint(1, 5)
-    # Какой индекс значение, которое будет скрыто от участника
+    # Which indexed number will be hidden
     random_index_of_hidden_number: int = randrange(number_of_iterations)
-    # Параметр, где будет храниться последовательность
+    # Parameter, that stores the progression
     progress: str = f'{starting_number} '
-    # Скрытое значение
+    # hidden number
     hidden_number: int = 0
     for i in range(number_of_iterations):
         if random_index_of_hidden_number == i:
@@ -35,14 +35,14 @@ def make_progression() -> tuple:
 
 def find_progression(name: str) -> None:
     """
-    Функция для определения результата последовательнотси
+    Function to determine the result of the game
     """
     print("What number is missing in this progression?")
-    player_result: int = 0  # Счётчик для ослеживания результата игрока (необ.)
-    tries_count: int = 0  # Счётчик для отслеживания количества попыток
+    player_result: int = 0  # Counter for player's results
+    tries_count: int = 0  # Counter for attempts
     while tries_count != 3:
-        new_progression = make_progression()  # Получаем последовательность
-        tries_count += 1  # Прибавляем количество ходов
+        new_progression = make_progression()  # Get the progression
+        tries_count += 1  # Increment the counter of attempts
         print(f"Question: {new_progression[0]}")
         player_answer: int = int(input("Your answer: "))
         if player_answer == new_progression[1]:
@@ -59,7 +59,7 @@ def find_progression(name: str) -> None:
 
 def main() -> None:
     """
-    Функция для запуска игры
+    Function to start the game
     """
     player_name = welcome_user()
     find_progression(player_name)

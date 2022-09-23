@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 """
-Скрипт приветствие игрока
+Greeting module
 """
 from .cli import welcome_user
 
 
 def main() -> None:
     """
-    Вызов приветствия
+    getting the greetings to start the game
     """
     welcome_user()
 

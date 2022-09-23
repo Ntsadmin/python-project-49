@@ -1,5 +1,5 @@
 """
-Функционал игры "вычиление простых чисел"
+'Prime number' game
 """
 from random import randint
 from .cli import welcome_user
@@ -7,11 +7,11 @@ from .cli import welcome_user
 
 def is_prime(num: int) -> bool:
     """
-    Доп функция для определения, является ли число простое или нет
+    Function to check if the number is prime
     """
-    if num <= 1:  # Отрицательные числа не могут быть простыми
+    if num <= 1:  # Negative numbers can't be prime
         return False
-    # Проверяем если число делится на число больше 1 и меньше само число
+    # We divide the number by the range to the number itself
     for i in range(2, num):
         if num % i == 0:
             return False
@@ -20,14 +20,14 @@ def is_prime(num: int) -> bool:
 
 def prime_number(name: str) -> None:
     """
-    Функция для игры вычисления простых чисел
+    Function to determine the result of the game
     """
     print("Answer 'yes' if the number is prime otherwise answer 'no'!")
-    player_result: int = 0  # Счётчик для ослеживания результата игрока (необ.)
-    tries_count: int = 0  # Счётчик для отслеживания количества попыток
+    player_result: int = 0  # Counter for player's results
+    tries_count: int = 0  # Counter for attempts
     while tries_count != 3:
         number: int = randint(1, 1000)
-        tries_count += 1  # Прибавляем количество ходов
+        tries_count += 1  # Increment the counter of attempts
         print(f"Question: {number}")
         player_answer: str = str(input("Your answer: "))
         if (player_answer == 'yes' and is_prime(number)) or \
@@ -49,7 +49,7 @@ def prime_number(name: str) -> None:
 
 def main() -> None:
     """
-    Функция для запуска игры
+    Function to start the game
     """
     player_name: str = welcome_user()
     prime_number(player_name)

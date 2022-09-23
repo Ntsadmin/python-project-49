@@ -1,12 +1,12 @@
 """
-Основное начало игры
+Start of the game
 """
 import prompt
 
 
 def welcome_user() -> str:
     """
-    Функция для приветствия
+    Greeting function
     """
     print("Welcome to the Brain Games!")
     name: str = prompt.string('May I have your name? ')
