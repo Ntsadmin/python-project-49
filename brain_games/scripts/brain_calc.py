@@ -5,7 +5,7 @@ from random import randint, choice
 from .cli import welcome_user
 
 
-SIMPLE_ARITHMETIC_SYMBOLS = ['+', '-', '/', '*']
+SIMPLE_ARITHMETIC_SYMBOLS = ['+', '-', '*']
 
 
 def brain_calc(name: str) -> None:
