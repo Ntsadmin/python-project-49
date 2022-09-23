@@ -37,6 +37,7 @@ def even_number(name: str) -> None:
             else:
                 print(f"{player_answer} is wrong answer ;(. "
                       f"Correct answer was 'yes'")
+            print(f"Let's try again, {name}!")
             break
 
     if player_result == 3:
