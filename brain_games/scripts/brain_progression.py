@@ -1,7 +1,7 @@
 """
 Функционал игры "математическая последовательность"
 """
-from random import randint
+from random import randint, randrange
 from .cli import welcome_user
 
 
@@ -17,7 +17,7 @@ def make_progression() -> tuple:
     # Параметр икрементирование
     increment_number: int = randint(1, 5)
     # Какой индекс значение, которое будет скрыто от участника
-    random_index_of_hidden_number: int = randint(0, 10)
+    random_index_of_hidden_number: int = randrange(number_of_iterations)
     # Параметр, где будет храниться последовательность
     progress: str = f'{starting_number} '
     # Скрытое значение
@@ -25,7 +25,7 @@ def make_progression() -> tuple:
     for i in range(number_of_iterations):
         if random_index_of_hidden_number == i:
             starting_number += increment_number
-            hidden_number: int = starting_number
+            hidden_number = starting_number
             progress += '.. '
         else:
             starting_number += increment_number
