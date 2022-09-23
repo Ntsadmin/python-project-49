@@ -2,20 +2,14 @@
 """
 Скрипт приветствие игрока
 """
-
-
-def greetings() -> None:
-    """
-    Функция для приветствия
-    """
-    print("Welcome to the Brain Games!")
+from .cli import welcome_user
 
 
 def main() -> None:
     """
     Вызов приветствия
     """
-    greetings()
+    welcome_user()
 
 
 if __name__ == '__main__':
