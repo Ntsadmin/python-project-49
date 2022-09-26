@@ -7,7 +7,7 @@ from brain_games.utils import calc_util
 
 def main() -> None:
     """
-    Testing function
+    Function to start the game
     """
     run_game(calc_util)
 
