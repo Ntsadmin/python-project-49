@@ -1,29 +1,15 @@
 """
 Functionality for the game "Arithmetic calculations"
 """
-from .cli import welcome_user
-from .calc_utils import get_calc_result
-
-
-SIMPLE_ARITHMETIC_SYMBOLS = ['+', '-', '*']
-
-
-def brain_calc(name: str) -> None:
-    """
-    Function for arithmetic calculation problems
-    """
-    print("What is the result of the expression?")
-    player_result: int = 0  # Counter for player's results
-    tries_count: int = 0  # Counter for attempts
-    get_calc_result(player_result, tries_count, name)
+from brain_games.game_starter import run_game
+from brain_games.utils import calc_util
 
 
 def main() -> None:
     """
     Testing function
     """
-    player_name: str = welcome_user()
-    brain_calc(player_name)
+    run_game(calc_util)
 
 
 if __name__ == '__main__':
