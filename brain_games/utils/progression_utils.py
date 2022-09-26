@@ -31,4 +31,5 @@ def game_utils() -> tuple:
         else:
             starting_number += increment_number
             progress += f'{starting_number} '
-    return progress, str(hidden_number)
+    question: str = f'Question: {progress}'
+    return question, str(hidden_number)
