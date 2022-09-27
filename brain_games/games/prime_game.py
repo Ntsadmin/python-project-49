@@ -5,6 +5,8 @@ from random import randint
 
 GAME_MESSAGE: str = "Answer 'yes' if the number is prime otherwise answer" \
                     " 'no'!"
+MIN_INTEGER = 1
+MAX_INTEGER = 100
 
 
 def is_prime(number: int) -> bool:
@@ -24,7 +26,7 @@ def game_utils() -> tuple:
     """
     :return question + correct_answer
     """
-    random_number: int = randint(1, 100)
+    random_number: int = randint(MIN_INTEGER, MAX_INTEGER)
     question: str = f"Question: {random_number}"
     if is_prime(random_number):
         correct_answer: str = 'yes'
