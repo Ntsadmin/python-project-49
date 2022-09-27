@@ -8,8 +8,9 @@ repository = "https://github.com/GregTMJ/python-project-49"
 packages = [{include = "brain_games"}]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.7"
 prompt = "^0.4.1"
+jsonschema = "^4.16.0"
 
 [tool.poetry.scripts]
 brain-games = "brain_games.scripts.brain_games:main"
